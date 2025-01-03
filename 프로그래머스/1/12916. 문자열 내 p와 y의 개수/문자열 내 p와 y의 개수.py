@@ -1,2 +1,2 @@
 def solution(s):
-    return True if (s.count('p') + s.count('P')) == (s.count('y') + s.count('Y')) else False
+    return True if s.lower().count('p')== s.lower().count('y') else False

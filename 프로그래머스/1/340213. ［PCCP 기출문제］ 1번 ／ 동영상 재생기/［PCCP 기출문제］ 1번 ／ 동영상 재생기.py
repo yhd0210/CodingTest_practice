@@ -15,22 +15,14 @@ def solution(video_len, pos, op_start, op_end, commands):
     for command in commands:
         if op_start_seconds <= current_pos <= op_end_seconds:
             current_pos = op_end_seconds
-            print(seconds_to_time(current_pos))
-            print(1)
         
         if command == "prev":
             current_pos = max(0, current_pos - 10)
-            print(seconds_to_time(current_pos))
-            print(2)
             
         elif command == "next":
             current_pos = min(video_length, current_pos + 10)
-            print(seconds_to_time(current_pos))
-            print(3)
         
         if op_start_seconds <= current_pos <= op_end_seconds:
-                current_pos = op_end_seconds
-                print(seconds_to_time(current_pos))
-                print(1)
-        
+            current_pos = op_end_seconds
+
     return seconds_to_time(current_pos)

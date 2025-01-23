@@ -3,21 +3,22 @@ import java.util.Collections;
 
 class Solution {
     public int[] solution(int[] arr, int divisor) {
-         ArrayList<Integer> tempList = new ArrayList<>();
+         ArrayList<Integer> list = new ArrayList<>();
+        
         for (int num : arr) {
             if (num % divisor == 0) {
-                tempList.add(num);
+                list.add(num);
             }
         }
-        if (tempList.isEmpty()) {
-            tempList.add(-1);
+        if (list.isEmpty()) {
+            list.add(-1);
         } else {
-            Collections.sort(tempList);
+            Collections.sort(list);
         }
 
-        int[] answer = new int[tempList.size()];
-        for (int i = 0; i < tempList.size(); i++) {
-            answer[i] = tempList.get(i);
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
         }
 
         return answer;
